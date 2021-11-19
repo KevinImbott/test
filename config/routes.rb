@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  #Get all Users
   get "/api/v1/users", to: "users#index"
+
+  #Post Notification to User with Id
   post "/api/v1/users/:user_id/notify", to: "users#create_notification"
+
+  #Get All Notifications to User with Id
   get "/api/v1/users/:user_id/notifications", to: "users#get_user_notification"
 end
